@@ -11,10 +11,8 @@ console.log(getUserNames(users));
 // Задание 2
 // Получить массив объектов пользователей по цвету глаз (поле eyeColor).
 
-const getUsersWithEyeColor = (users, color) => {
-
-};
-
+const getUsersWithEyeColor = (users, color) => users.filter((user) => user.eyeColor === color);
+    
 console.log(getUsersWithEyeColor(users, 'blue')); // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
 
 // Задание 3
@@ -48,9 +46,7 @@ console.log(getUserWithEmail(users, 'elmahead@omatom.com')); // {объект п
 // Задание 6
 // Получить массив пользователей попадающих в возрастную категорию от min до max лет (поле age).
 
-const getUsersWithAge = (users, min, max) => {
-
-};
+const getUsersWithAge = (users, min, max) => users.filter((user) => user.age > min && < max);
 
 console.log(getUsersWithAge(users, 20, 30)); // [объект Ross Vazquez, объект Elma Head, объект Carey Barr]
 
