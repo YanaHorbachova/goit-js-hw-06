@@ -58,3 +58,24 @@ console.log(getUsersWithAge(users, 30, 40));
 // [объект Moore Hensley, объект Sharlene Bush, объект Blackburn Dotson, объект Sheree Anthony]
 
 
+// Задание 7
+// Получить общую сумму баланса (поле balance) всех пользователей.
+
+const calculateTotalBalance = users => users.reduce((acc,user) => acc + user.balance, 0);
+
+console.log(calculateTotalBalance(users)); // 20916
+
+
+// Задание 10
+// Получить массив всех умений всех пользователей (поле skills), при этом не должно быть повторяющихся умений и они должны быть отсортированы в алфавитном порядке.
+
+const getSortedUniqueSkills = users => 
+users 
+    .reduce((skills, user) => {
+        skills.push(...user.skills);
+        return skills;}, [])
+    .filter((skill, index, array) => array.indexOf(skill) === index)
+    .sort();
+
+console.log(getSortedUniqueSkills(users));
+// [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
